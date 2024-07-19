@@ -5,7 +5,9 @@ function Header() {
   return (
     <header>
       <BcgImage></BcgImage>
-      <H1>Мой заголовок</H1>
+      <H1>
+        Мой <span className="first-heading--thin">заголовок</span>
+      </H1>
     </header>
   );
 }

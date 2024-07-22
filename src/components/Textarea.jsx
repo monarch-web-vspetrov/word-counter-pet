@@ -1,9 +1,7 @@
 import { useState } from "react";
 import Warning from "../UI/Warrning";
-function Textarea() {
-  const [textareaValue, setTextareaValue] = useState("");
+function Textarea({ textareaValue, setTextareaValue }) {
   const [showWarning, setShowWarning] = useState(false);
-  console.log(textareaValue);
 
   function handleChange(e) {
     setShowWarning(false);

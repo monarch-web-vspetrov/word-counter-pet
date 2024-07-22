@@ -1,10 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Stat from "./Stat";
+import { FACEBOOK_LIMIT, INSTAGRAM_LIMIT } from "../lib/constants";
 
-function Stats() {
+function Stats({ charactersCount, wordsCount }) {
+  useEffect(() => {
+    setStats({
+      words: wordsCount,
+      characters: charactersCount,
+      instagram: INSTAGRAM_LIMIT - charactersCount,
+      facebook: FACEBOOK_LIMIT - charactersCount,
+    });
+  }, [charactersCount, wordsCount]);
   const [stats, setStats] = useState({
     words: 0,
-    characters: 0,
+    characters: charactersCount,
     instagram: 280,
     facebook: 2200,
   });
